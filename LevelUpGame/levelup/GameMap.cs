@@ -24,12 +24,12 @@ namespace LevelUpGame.levelup
             throw new NotImplementedException();
         }
 
-        public bool isPositionValid(Point positionCoordinates)
+        public bool IsPositionValid(Point positionCoordinates)
         {
             throw new NotImplementedException();
         }
 
-        public int getTotalPositions()
+        public int GetTotalPositions()
         {
             throw new NotImplementedException();
         }

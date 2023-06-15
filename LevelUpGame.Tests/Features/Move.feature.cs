@@ -36,7 +36,7 @@ namespace LevelUpGame.Test.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Move", "    I want to move my character. If they attempt to move past a boundary, the mov" +
-                    "e results in no change in position.", ProgrammingLanguage.CSharp, featureTags);
+                    "e results in no change in position but does increment move count.", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,8 +77,12 @@ namespace LevelUpGame.Test.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Move in a direction")]
         [NUnit.Framework.CategoryAttribute("acceptance")]
-        [NUnit.Framework.TestCaseAttribute("0", "0", "NORTH", "10", "0", "1", "11", null)]
-        [NUnit.Framework.TestCaseAttribute("0", "0", "SOUTH", "32", "0", "0", "33", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "5", "SOUTH", "5", "1", "5", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "5", "NORTH", "7", "0", "5", "8", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "WEST", "19", "0", "9", "20", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "SOUTH", "30", "0", "9", "31", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "EAST", "11", "1", "9", "12", null)]
+        [NUnit.Framework.TestCaseAttribute("2", "4", "WEST", "15", "1", "4", "16", null)]
         public void MoveInADirection(string startingPositionX, string startingPositionY, string direction, string startingMoveCount, string endingPositionX, string endingPositionY, string endingMoveCount, string[] exampleTags)
         {
             string[] @__tags = new string[] {

@@ -7,7 +7,9 @@ public class Character
     public string Name {get;set;}
 
     public Character()
-    {    }
+    {  
+        Name = DefaultName;
+    }
     public Character(string name)
     {
         Name = name;

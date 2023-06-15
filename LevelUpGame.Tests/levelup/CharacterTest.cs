@@ -15,11 +15,19 @@ namespace levelup
         }
 
         [Test]
-       public void GetName_Should_return_GivenInput()
+       public void Constructor_Should_Return_GivenInput()
        {
          var expected = "Bill";
-         var results = new Character(expected);
-         Assert.AreEqual(results.Name, expected);
+         var result = new Character(expected);
+         Assert.AreEqual(result.Name, expected);
+       }
+
+       [Test]
+       public void Constructor_Should_Return_DefaultName_When_NoInputs()
+       {
+        var defaultName = "Mark";
+        var result = new Character();
+        Assert.AreEqual(result.Name, defaultName);
        }
     }
 }

@@ -1,7 +1,7 @@
 using Sharprompt;
 using System.Collections;
 namespace levelup;
-class Character
+public class Character
 {
     public static string DefaultName = "Mark";
     public string Name {get;set;}

@@ -14,6 +14,11 @@ namespace LevelUpGame.levelup
         Position StartingPosition = new Position(0,0);
         int NumPositions = 100;
 
+        private const int MIN_X = 0;
+        private const int MAX_X = 9;
+        private const int MIN_Y = 0;
+        private const int MAX_Y = 9;
+
         public Position[][] GetPositions()
         {
             throw new NotImplementedException();
@@ -26,7 +31,19 @@ namespace LevelUpGame.levelup
 
         public bool IsPositionValid(Point positionCoordinates)
         {
-            throw new NotImplementedException();
+            // x parameter
+            if (positionCoordinates.X < MIN_X || positionCoordinates.X > MAX_X)
+            {
+                return false;
+            }
+
+            // y parameter
+            if (positionCoordinates.Y < MIN_Y || positionCoordinates.Y > MAX_Y) 
+            { 
+                return false; 
+            }
+
+            return true;
         }
 
         public int GetTotalPositions()

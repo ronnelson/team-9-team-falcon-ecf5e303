@@ -36,7 +36,7 @@ namespace LevelUpGame.Test.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Move", "    I want to move my character. If they attempt to move past a boundary, the mov" +
-                    "e results in no change in position but does increment move count.", ProgrammingLanguage.CSharp, featureTags);
+                    "e results in no change in position but does increment move count but does increment move count.", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,6 +83,34 @@ namespace LevelUpGame.Test.Features
         [NUnit.Framework.TestCaseAttribute("0", "9", "SOUTH", "30", "0", "9", "31", null)]
         [NUnit.Framework.TestCaseAttribute("0", "9", "EAST", "11", "1", "9", "12", null)]
         [NUnit.Framework.TestCaseAttribute("2", "4", "WEST", "15", "1", "4", "16", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "0", "NORTH", "5", "0", "0", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "0", "SOUTH", "5", "1", "0", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "0", "EAST", "5", "0", "0", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "0", "WEST", "5", "0", "1", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "NORTH", "5", "0", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "SOUTH", "5", "1", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "EAST", "5", "0", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "WEST", "5", "0", "8", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "9", "NORTH", "5", "9", "8", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "9", "SOUTH", "5", "9", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "9", "EAST", "5", "9", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "9", "WEST", "5", "8", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "NORTH", "5", "0", "8", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "SOUTH", "5", "0", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "EAST", "5", "1", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "9", "WEST", "5", "0", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "5", "NORTH", "5", "0", "4", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "5", "SOUTH", "5", "6", "0", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "5", "EAST", "5", "0", "5", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "5", "WEST", "5", "0", "4", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "5", "NORTH", "5", "4", "5", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "5", "SOUTH", "5", "9", "6", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "5", "EAST", "5", "9", "5", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "5", "WEST", "5", "8", "5", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("5", "9", "NORTH", "5", "8", "5", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("5", "9", "SOUTH", "5", "5", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("5", "9", "EAST", "5", "6", "9", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("5", "9", "WEST", "5", "4", "9", "6", null)]
         public void MoveInADirection(string startingPositionX, string startingPositionY, string direction, string startingMoveCount, string endingPositionX, string endingPositionY, string endingMoveCount, string[] exampleTags)
         {
             string[] @__tags = new string[] {

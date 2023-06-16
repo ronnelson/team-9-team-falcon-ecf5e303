@@ -6,11 +6,9 @@ namespace LevelUpGame.levelup
     public sealed class FakeCharacterClass : Character
     {
 
+        private Position currentPosition;
         public FakeCharacterClass()
-            :base()
-        {
-
-        }
+            :base(){}
 
         public FakeCharacterClass(string name) 
             :base(name)
@@ -19,7 +17,7 @@ namespace LevelUpGame.levelup
         }
         public void setPosition(int XCoordinates, int YCoordinates)
         {
-           base.CurrentPosition = new Position(XCoordinates, YCoordinates);
+           this.currentPosition = new Position(XCoordinates, YCoordinates);
         }
 
         public GameMap getGameMap()

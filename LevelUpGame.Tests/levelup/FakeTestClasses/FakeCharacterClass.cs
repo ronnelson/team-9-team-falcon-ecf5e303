@@ -1,9 +1,16 @@
+using levelup;
 
-using LevelUpGame.levelup;
 
-namespace GameTests{
+namespace LevelUpGame.levelup
+{
     public sealed class FakeCharacterClass : Character
     {
+
+        public FakeCharacterClass()
+            :base()
+        {
+
+        }
 
         public FakeCharacterClass(string name) 
             :base(name)
@@ -12,7 +19,7 @@ namespace GameTests{
         }
         public void setPosition(int XCoordinates, int YCoordinates)
         {
-            this.CurrentPosition = new Position(XCoordinates, YCoordinates);
+           // base.CurrentPosition = new Position(XCoordinates, YCoordinates);
         }
 
         public GameMap getGameMap()

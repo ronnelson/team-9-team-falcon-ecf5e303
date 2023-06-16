@@ -1,8 +1,8 @@
+using System.Drawing;
 using NUnit.Framework;
 using LevelUpGame.levelup;
-using System.Drawing;
 
-namespace levelup
+namespace LevelUpGame.levelup
 {
     [TestFixture]
     public class CharacterTest
@@ -12,7 +12,8 @@ namespace levelup
         [SetUp]
         public void SetUp()
         {
-            testObj = new Character();
+           // testObj = new Character();
+            testObj = new FakeCharacterClass();
         }
 
         [Test]

@@ -3,26 +3,39 @@ using levelup;
 
 namespace LevelUpGame.levelup
 {
-    public sealed class FakeCharacterClass : Character
+    public sealed class FakeCharacter : Character
     {
 
         private Position currentPosition;
-        public FakeCharacterClass()
+        private GameMap gameMap;
+        public FakeCharacter()
             :base(){}
 
-        public FakeCharacterClass(string name) 
+        public FakeCharacter(string name) 
             :base(name)
         {
             
         }
+
+        public FakeCharacter(GameMap map) 
+            :base()
+        {
+            this.gameMap = map;
+        }
+
         public void setPosition(int XCoordinates, int YCoordinates)
         {
            this.currentPosition = new Position(XCoordinates, YCoordinates);
         }
 
+        public void setGameMap(GameMap map)
+        {
+            this.gameMap = map;
+        }
+
         public GameMap getGameMap()
         {
-            return base.GameMap;
+            return this.gameMap;
         }
     }
 }

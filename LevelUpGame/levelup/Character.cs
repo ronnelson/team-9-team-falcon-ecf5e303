@@ -9,8 +9,8 @@ namespace LevelUpGame.levelup
     {
         public static string DefaultName = "Mark";
         private string Name {get;set;}
-        public Position CurrentPosition {get;set;}
-        public GameMap GameMap {get;set;}
+        private Position CurrentPosition {get;set;}
+        private GameMap GameMap {get;set;}
         public int MoveCount {get; set;} = 0;
 
         public Character()

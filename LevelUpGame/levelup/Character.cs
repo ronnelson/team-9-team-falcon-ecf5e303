@@ -7,9 +7,8 @@ public class Character
 {
     public static string DefaultName = "Mark";
     private string Name {get;set;}
-    private Point CurrentPosition {get;set;}
+    public Position CurrentPosition {get;set;}
     public GameMap GameMap {get;set;}
-    public Position Position {get;set;}
 
     public Character()
     {  
@@ -28,7 +27,12 @@ public class Character
     public void EnterMap(GameMap map)
     {
         GameMap = map;
-        Position = GameMap.StartingPosition;
+        CurrentPosition = GameMap.StartingPosition;
+    }
+
+    public Position GetPosition()
+    {
+        return CurrentPosition;
     }
 
 }

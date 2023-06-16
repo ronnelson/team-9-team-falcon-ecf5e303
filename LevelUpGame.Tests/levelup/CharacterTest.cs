@@ -51,20 +51,27 @@ namespace levelup
        [Test]
        public void EnterMap_Should_Set_Initial_Position()
        {
-        var expectedStartingPosition = new Point(0,0);
+        var expectedStartingPosition = new Position(0,0);
         var character = new Character();
         var gameMap = new GameMap();
         character.EnterMap(gameMap);
-        Assert.AreEqual(character.Position.Coordinates,expectedStartingPosition);
+        Assert.AreEqual(character.CurrentPosition.Coordinates,expectedStartingPosition.Coordinates);
        }
 
-    //    [Test]
-    //    public void GetCurrentPosition_Should_Return_Current_Position() 
-    //    {
-    //         var character = new Character();
-    //         var gameMap = new GameMap();
-    //         Assert.AreEqual(gameMap.StartingPosition);
-    //    }
+       [Test]
+       public void GetPosition_Should_Return_Current_Position() 
+       {
+            var character = new Character();
+            var gameMap = new GameMap();
+            var expected = new Position(0,0);
+            character.EnterMap(gameMap);
+            var result = character.GetPosition();
+
+            Assert.AreEqual(result.Coordinates, expected.Coordinates);
+
+
+
+       }
     }
 
 }

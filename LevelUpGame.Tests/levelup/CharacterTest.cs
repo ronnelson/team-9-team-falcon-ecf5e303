@@ -1,6 +1,7 @@
 using System.Drawing;
 using NUnit.Framework;
 using LevelUpGame.levelup;
+using static levelup.GameController;
 
 namespace LevelUpGame.levelup
 {
@@ -69,9 +70,20 @@ namespace LevelUpGame.levelup
             var result = character.GetPosition();
 
             Assert.AreEqual(result.Coordinates, expected.Coordinates);
+       }
 
+       [Test]
+       public void Move_Should_Update_Current_Position()
+       {
+            var direction = DIRECTION.EAST;
+            var character = new Character();
+            var gameMap = new GameMap();
+            character.EnterMap(gameMap);
+            var expected = new Position(1,0);
 
-
+            character.Move(direction);
+            var result = character.CurrentPosition;
+            Assert.AreEqual(result.Coordinates, expected.Coordinates);
        }
     }
 

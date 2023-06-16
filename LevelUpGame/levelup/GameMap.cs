@@ -1,31 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using static levelup.GameController;
 
 namespace LevelUpGame.levelup
 {
     public class GameMap
     {
-        Position[][] Positions;
-        Position StartingPosition = new Position(0,0);
-        int NumPositions = 100;
+        Position[,] Positions;
 
+        Position StartingPosition = new Position(0,0);
+
+        // Game grid boundaries
         private const int MIN_X = 0;
         private const int MAX_X = 9;
         private const int MIN_Y = 0;
         private const int MAX_Y = 9;
 
-        public Position[][] GetPositions()
+        public void Init()
         {
-            throw new NotImplementedException();
+            Positions = new Position[MAX_X - MIN_X + 1, MAX_Y - MIN_Y + 1];
+
+            for (int i = MIN_X; i <= MAX_X; i++)
+            {
+                for (int j = MIN_Y; j <= MAX_Y; j++)
+                {
+                    Positions[i, j] = new Position(i, j);
+                }
+            }
         }
 
-        public void CalculatePosition(Position startingPosition, DIRECTION direction)
+        public Position[,] GetPositions()
         {
+            return Positions;
+        }
+
+        public Position GetStartingPosition()
+        {
+            return StartingPosition;
+        }
+
+        public Position CalculatePosition(Position startingPosition, DIRECTION direction)
+        {
+            // ToDo: Implement
             throw new NotImplementedException();
         }
 
@@ -48,7 +63,7 @@ namespace LevelUpGame.levelup
 
         public int GetTotalPositions()
         {
-            throw new NotImplementedException();
+            return Positions.Length;
         }
     }
 }

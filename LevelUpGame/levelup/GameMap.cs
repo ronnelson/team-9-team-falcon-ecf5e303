@@ -6,9 +6,8 @@ namespace LevelUpGame.levelup
     public class GameMap
     {
         Position[,] Positions;
-
-        Position StartingPosition = new Position(0,0);
-
+        public Position StartingPosition = new Position(0,0);
+        
         // Game grid boundaries
         private const int MIN_X = 0;
         private const int MAX_X = 9;

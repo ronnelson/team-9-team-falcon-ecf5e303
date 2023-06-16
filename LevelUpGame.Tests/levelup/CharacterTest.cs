@@ -1,5 +1,6 @@
 using NUnit.Framework;
-using levelup;
+using LevelUpGame.levelup;
+using System.Drawing;
 
 namespace levelup
 {
@@ -19,7 +20,7 @@ namespace levelup
        {
          var expected = "Bill";
          var result = new Character(expected);
-         Assert.AreEqual(result.Name, expected);
+         Assert.AreEqual(result.GetName(), expected);
        }
 
        [Test]
@@ -27,7 +28,43 @@ namespace levelup
        {
         var defaultName = "Mark";
         var result = new Character();
-        Assert.AreEqual(result.Name, defaultName);
+        Assert.AreEqual(result.GetName(), defaultName);
        }
+
+       [Test]
+       public void GetName_Should_Return_Name() {
+        var name = "Bob";
+        var character = new Character(name);
+        var result = character.GetName();
+        Assert.AreEqual(result,name);
+       }
+
+       [Test]
+       public void EnterMap_Should_Set_Initial_Map()
+       {
+        var character = new Character();
+        var gameMap = new GameMap();
+        character.EnterMap(gameMap);
+        Assert.NotNull(character.GameMap);
+       }
+
+       [Test]
+       public void EnterMap_Should_Set_Initial_Position()
+       {
+        var expectedStartingPosition = new Point(0,0);
+        var character = new Character();
+        var gameMap = new GameMap();
+        character.EnterMap(gameMap);
+        Assert.AreEqual(character.Position.Coordinates,expectedStartingPosition);
+       }
+
+    //    [Test]
+    //    public void GetCurrentPosition_Should_Return_Current_Position() 
+    //    {
+    //         var character = new Character();
+    //         var gameMap = new GameMap();
+    //         Assert.AreEqual(gameMap.StartingPosition);
+    //    }
     }
+
 }

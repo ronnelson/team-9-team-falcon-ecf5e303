@@ -14,7 +14,7 @@ namespace LevelUpGame.levelup
         public void SetUp()
         {
            // testObj = new Character();
-            testObj = new FakeCharacterClass();
+            testObj = new FakeCharacter();
         }
 
         [Test]
@@ -46,7 +46,7 @@ namespace LevelUpGame.levelup
        {
         //var character = new Character();
         GameMap gameMap = new GameMap();
-        FakeCharacterClass character = new FakeCharacterClass(gameMap);
+        FakeCharacter character = new FakeCharacter(gameMap);
         character.EnterMap(gameMap);
         Assert.NotNull(character.getGameMap());
        }
@@ -56,7 +56,7 @@ namespace LevelUpGame.levelup
        {
         var expectedStartingPosition = new Position(0,0);
         //var character = new Character();
-        var character = new FakeCharacterClass();
+        var character = new FakeCharacter();
         var gameMap = new GameMap();
         character.EnterMap(gameMap);
         //Assert.AreEqual(character.CurrentPosition.Coordinates,expectedStartingPosition.Coordinates);

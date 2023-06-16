@@ -3,21 +3,21 @@ using levelup;
 
 namespace LevelUpGame.levelup
 {
-    public sealed class FakeCharacterClass : Character
+    public sealed class FakeCharacter : Character
     {
 
         private Position currentPosition;
         private GameMap gameMap;
-        public FakeCharacterClass()
+        public FakeCharacter()
             :base(){}
 
-        public FakeCharacterClass(string name) 
+        public FakeCharacter(string name) 
             :base(name)
         {
             
         }
 
-        public FakeCharacterClass(GameMap map) 
+        public FakeCharacter(GameMap map) 
             :base()
         {
             this.gameMap = map;

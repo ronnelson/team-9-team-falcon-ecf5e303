@@ -87,6 +87,22 @@ namespace LevelUpGame.levelup
             var result = character.CurrentPosition;
             Assert.AreEqual(result.Coordinates, expected.Coordinates);
        }
+
+        [Test]
+        public void Move_Should_Increment_MoveCount()
+        {
+            var direction = DIRECTION.EAST;
+            var character = new Character();
+            var gameMap = new GameMap();
+            character.EnterMap(gameMap);
+            var expected = 1;
+
+            character.Move(direction);
+            var result = character.MoveCount;
+            Assert.AreEqual(result,expected);
+        }
+
     }
+
 
 }

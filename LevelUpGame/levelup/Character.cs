@@ -11,6 +11,7 @@ namespace LevelUpGame.levelup
         private string Name {get;set;}
         public Position CurrentPosition {get;set;}
         public GameMap GameMap {get;set;}
+        public int MoveCount {get; set;} = 0;
 
         public Character()
         {  
@@ -41,6 +42,7 @@ namespace LevelUpGame.levelup
         {
             var movedPosition =  GameMap.CalculatePosition(CurrentPosition, direction);
             CurrentPosition = movedPosition;
+            MoveCount++;
         }
     }
 }

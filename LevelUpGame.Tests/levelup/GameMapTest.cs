@@ -41,27 +41,27 @@ namespace levelup
 
         [Test]
         // Upper left corner
-        [TestCase(0, 0, DIRECTION.EAST, 0, 1)]
+        [TestCase(0, 0, DIRECTION.EAST, 1, 0)]
         [TestCase(0, 0, DIRECTION.WEST, 0, 0)]
-        [TestCase(0, 0, DIRECTION.SOUTH, 1, 0)]
+        [TestCase(0, 0, DIRECTION.SOUTH, 0, 1)]
         [TestCase(0, 0, DIRECTION.NORTH, 0, 0)]
 
         // Upper right corner
-        [TestCase(0, 9, DIRECTION.EAST, 0, 9)]
-        [TestCase(0, 9, DIRECTION.WEST, 0, 8)]
-        [TestCase(0, 9, DIRECTION.SOUTH, 1, 9)]
-        [TestCase(0, 9, DIRECTION.NORTH, 0, 9)]
+        [TestCase(0, 9, DIRECTION.EAST, 1, 9)]
+        [TestCase(0, 9, DIRECTION.WEST, 0, 9)]
+        [TestCase(0, 9, DIRECTION.SOUTH, 0, 9)]
+        [TestCase(0, 9, DIRECTION.NORTH, 0, 8)]
 
         // Lower left corner
-        [TestCase(9, 0, DIRECTION.EAST, 9, 1)]
-        [TestCase(9, 0, DIRECTION.WEST, 9, 0)]
-        [TestCase(9, 0, DIRECTION.SOUTH, 9, 0)]
-        [TestCase(9, 0, DIRECTION.NORTH, 8, 0)]
+        [TestCase(9, 0, DIRECTION.EAST, 9, 0)]
+        [TestCase(9, 0, DIRECTION.WEST, 8, 0)]
+        [TestCase(9, 0, DIRECTION.SOUTH, 9, 1)]
+        [TestCase(9, 0, DIRECTION.NORTH, 9, 0)]
 
         // Lower right corner
         [TestCase(9, 9, DIRECTION.EAST, 9, 9)]
         [TestCase(9, 9, DIRECTION.WEST, 8, 9)]
-        [TestCase(9, 9, DIRECTION.SOUTH, 9, 0)]
+        [TestCase(9, 9, DIRECTION.SOUTH, 9, 9)]
         [TestCase(9, 9, DIRECTION.NORTH, 9, 8)]
 
         // Middle

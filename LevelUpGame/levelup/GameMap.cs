@@ -39,8 +39,28 @@ namespace LevelUpGame.levelup
 
         public Position CalculatePosition(Position startingPosition, DIRECTION direction)
         {
-            // ToDo: Implement
-            throw new NotImplementedException();
+            var newPosition = new Point(startingPosition.Coordinates.X, startingPosition.Coordinates.Y);
+            if (direction == DIRECTION.SOUTH)
+            {
+                newPosition.Y++;
+            }
+            if (direction == DIRECTION.NORTH)
+            {
+                newPosition.Y--;
+            }
+            if (direction == DIRECTION.WEST)
+            {
+                newPosition.X--;
+            }
+            if (direction == DIRECTION.EAST)
+            {
+                newPosition.X++;
+            }
+            if (IsPositionValid(newPosition))
+            {
+                return new Position(newPosition.X, newPosition.Y);
+            }
+            return startingPosition;
         }
 
         public bool IsPositionValid(Point positionCoordinates)

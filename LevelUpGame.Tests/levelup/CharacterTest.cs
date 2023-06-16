@@ -44,10 +44,11 @@ namespace LevelUpGame.levelup
        [Test]
        public void EnterMap_Should_Set_Initial_Map()
        {
-        var character = new Character();
-        var gameMap = new GameMap();
+        //var character = new Character();
+        GameMap gameMap = new GameMap();
+        FakeCharacterClass character = new FakeCharacterClass(gameMap);
         character.EnterMap(gameMap);
-        Assert.NotNull(character.GameMap);
+        Assert.NotNull(character.getGameMap());
        }
 
        [Test]
@@ -84,7 +85,7 @@ namespace LevelUpGame.levelup
             var expected = new Position(1,0);
 
             character.Move(direction);
-            var result = character.CurrentPosition;
+            var result = character.GetPosition();
             Assert.AreEqual(result.Coordinates, expected.Coordinates);
        }
 

@@ -7,6 +7,7 @@ namespace LevelUpGame.levelup
     {
 
         private Position currentPosition;
+        private GameMap gameMap;
         public FakeCharacterClass()
             :base(){}
 
@@ -15,14 +16,26 @@ namespace LevelUpGame.levelup
         {
             
         }
+
+        public FakeCharacterClass(GameMap map) 
+            :base()
+        {
+            this.gameMap = map;
+        }
+
         public void setPosition(int XCoordinates, int YCoordinates)
         {
            this.currentPosition = new Position(XCoordinates, YCoordinates);
         }
 
+        public void setGameMap(GameMap map)
+        {
+            this.gameMap = map;
+        }
+
         public GameMap getGameMap()
         {
-            return base.GameMap;
+            return this.gameMap;
         }
     }
 }

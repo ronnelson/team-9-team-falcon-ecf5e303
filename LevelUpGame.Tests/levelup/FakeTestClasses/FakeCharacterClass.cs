@@ -19,12 +19,12 @@ namespace LevelUpGame.levelup
         }
         public void setPosition(int XCoordinates, int YCoordinates)
         {
-           // base.CurrentPosition = new Position(XCoordinates, YCoordinates);
+           base.CurrentPosition = new Position(XCoordinates, YCoordinates);
         }
 
         public GameMap getGameMap()
         {
-            return this.GameMap;
+            return base.GameMap;
         }
     }
 }

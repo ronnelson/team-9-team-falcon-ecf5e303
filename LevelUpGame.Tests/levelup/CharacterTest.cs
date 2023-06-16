@@ -54,10 +54,12 @@ namespace LevelUpGame.levelup
        public void EnterMap_Should_Set_Initial_Position()
        {
         var expectedStartingPosition = new Position(0,0);
-        var character = new Character();
+        //var character = new Character();
+        var character = new FakeCharacterClass();
         var gameMap = new GameMap();
         character.EnterMap(gameMap);
-        Assert.AreEqual(character.CurrentPosition.Coordinates,expectedStartingPosition.Coordinates);
+        //Assert.AreEqual(character.CurrentPosition.Coordinates,expectedStartingPosition.Coordinates);
+        Assert.AreEqual(character.GetPosition().Coordinates,expectedStartingPosition.Coordinates);
        }
 
        [Test]

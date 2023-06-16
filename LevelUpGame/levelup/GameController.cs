@@ -1,3 +1,4 @@
+using LevelUpGame.levelup;
 using System.Drawing;
 
 namespace levelup
@@ -5,6 +6,9 @@ namespace levelup
     public class GameController
     {
         public readonly string DEFAULT_CHARACTER_NAME = "Character";
+
+        private Character Character;
+        private GameMap GameMap;
 
         public record struct GameStatus(
             // TODO: Add other status data
@@ -32,22 +36,23 @@ namespace levelup
 
         // Pre-implemented to demonstrate ATDD
         // TODO: Update this if it does not match your design
-        public void CreateCharacter(String name)
+        public void CreateCharacter(String name = null)
         {
-            if (name != null && !name.Equals(""))
-            {
-                this.status.characterName = name;
-            }
-            else
-            {
-                this.status.characterName = DEFAULT_CHARACTER_NAME;
-            }
+            Character = new Character(name);
+            status.characterName = name;
         }
 
         public void StartGame()
         {
-            // TODO: Implement startGame - Should probably create positions and put the character on one
-            // TODO: Should also update the game status?
+            GameMap = new GameMap();
+            GameMap.Init();
+
+            if (Character == null)
+            {
+                this.CreateCharacter();
+            }
+
+            Character.EnterMap(GameMap);
         }
 
         public GameStatus GetStatus()
@@ -77,6 +82,9 @@ namespace levelup
             return -10;
         }
 
-
+        public Character GetCharacter()
+        {
+            return Character;
+        }
     }
 }
